@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script type='text/javascript' nonce='k+3sK//p+E66osgG3HzOYg==' src='https://t2631772.p.clickup-attachments.com/nKCe0R8P68Ktk02vJssEjT2KjsLV1-lC30Ot1u65bjIgmBRguHIF_RTefl_6APHa4KU6R9oPOjwuDI_b4lrC7FcvILzMBCWte3vj99T42fYN9kvfjJi69Dt0a0Ppb5_KEJCn4_-W0NdUjMMMxdsQ8LVh0ymbaTswFkNZERlivO-g668nEfPdz_xFAW00KZ8CaGEMGTq9uMo9D0_EC8Qj26-MpE1uninj7OzWL9wNCbIqsp2vtGkE6l3LQmhaWzO_4cclqhBno5ydSQ9Hq9RnyehWgJJ9mYAOqt1kDxIMwaRBtwVu9RVGdo01Tcn95wjYTkmUXbrbCE8eMyhfwpx4X5rs0rD0VqgVWlwq5l_qK0tAhcP6-yBCGP7D7DNfujZ9CVjzOnr-W17iD1v-hZ98Z4ulcH_6zfjnt-jF0V_pjv8D41GFmWAy70TyW3BMmChnrmYSya3JjWICFIS9uxNSMi16HSiVwXrx2mVN6G6idZDqlOLSF0DD0ZiI7mZs1slT24Z9xZEs1xqGYrznhsYZMnZ8x2V_KZtHf9w3LAaxRi8B-hT75ugbpDLqVmYefIfqRHSqQIpf2Q'></script>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Chrome UI (hover devices only): credit badge with idle-fade.
+    // Deferred until body exists since the script may run in <head>.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initChromeUI);
+    } else {
+        initChromeUI();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta property="og:title" content="Sami weds Aiman">
+<meta property="og:description" content="Together with their families, Sami Ahmed &amp; Aiman Zahra request the pleasure of your company — March 2027">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2d5a3f">
+<title>Sami weds Aiman — Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Jost:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green-deep: oklch(25% 0.08 155);
+  --green-dark: oklch(35% 0.12 155);
+  --green-primary: oklch(45% 0.14 155);
+  --green-mid: oklch(55% 0.12 152);
+  --green-light: oklch(70% 0.10 150);
+  --green-pale: oklch(85% 0.06 148);
+  --cream: oklch(96% 0.012 90);
+  --cream-light: oklch(98% 0.008 90);
+  --gold: oklch(72% 0.12 85);
+  --gold-light: oklch(82% 0.08 85);
+  --gold-deep: oklch(62% 0.14 85);
+  --text-dark: oklch(22% 0.03 155);
+  --text-mid: oklch(40% 0.05 155);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Jost', sans-serif;
+  background: var(--green-deep);
+}
+
+.invitation {
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* === NAV DOTS === */
+.nav-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+}
+
+.nav-dot.active {
+  background: var(--gold);
+  transform: scale(1.3);
+}
+
+.nav-dot::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-dot:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .nav-dots { right: 12px; gap: 12px; }
+  .nav-dot { width: 8px; height: 8px; }
+}
+
+/* === SPLASH PAGE === */
+.splash {
+  background: linear-gradient(
+    180deg,
+    oklch(96% 0.015 148) 0%,
+    oklch(97% 0.01 90) 40%,
+    oklch(95% 0.02 148) 100%
+  );
+}
+
+.floral {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  animation: floralReveal 1.8s var(--ease-out-expo) forwards;
+}
+
+.floral-top-left {
+  top: -20px; left: -30px;
+  width: min(55vw, 320px);
+  animation-delay: 0.6s;
+  transform: translateY(-20px) rotate(5deg);
+}
+
+.floral-top-right {
+  top: -20px; right: -30px;
+  width: min(50vw, 300px);
+  animation-delay: 0.8s;
+  transform: translateY(-20px) rotate(-5deg);
+}
+
+.floral-bottom-left {
+  bottom: -20px; left: -30px;
+  width: min(50vw, 280px);
+  animation-delay: 1s;
+  transform: translateY(20px) rotate(-3deg);
+}
+
+.floral-bottom-right {
+  bottom: -20px; right: -30px;
+  width: min(55vw, 320px);
+  animation-delay: 1.2s;
+  transform: translateY(20px) rotate(3deg);
+}
+
+@keyframes floralReveal {
+  to { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
+.petal {
+  position: absolute;
+  width: 8px; height: 12px;
+  background: var(--green-light);
+  border-radius: 50% 50% 50% 0;
+  opacity: 0;
+  animation: petalFloat 8s infinite linear;
+}
+
+.petal:nth-child(odd) { background: var(--gold-light); }
+
+@keyframes petalFloat {
+  0% { opacity: 0; transform: translateY(100vh) rotate(0deg); }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-20vh) rotate(360deg); }
+}
+
+.splash-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.ornament-top, .ornament-bottom {
+  opacity: 0;
+  animation: ornamentReveal 1.2s var(--ease-out-expo) forwards;
+}
+
+.ornament-top { animation-delay: 1.4s; margin-bottom: 24px; }
+.ornament-bottom { animation-delay: 1.6s; margin-top: 24px; }
+
+@keyframes ornamentReveal {
+  from { opacity: 0; transform: scaleX(0.3); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+
+.prelude {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  opacity: 0;
+  animation: textReveal 1.4s var(--ease-out-expo) forwards;
+  animation-delay: 1.8s;
+  margin-bottom: 12px;
+}
+
+.name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.8rem, 10vw, 5rem);
+  line-height: 1.15;
+  color: var(--text-dark);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: nameReveal 1.6s var(--ease-out-expo) forwards;
+}
+
+.name-1 { animation-delay: 2s; }
+.name-2 { animation-delay: 2.6s; }
+
+.ampersand {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  color: var(--green-primary);
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  animation: ampReveal 1.4s var(--ease-out-expo) forwards;
+  animation-delay: 2.3s;
+  margin: 4px 0;
+}
+
+@keyframes nameReveal { to { opacity: 1; transform: translateY(0); } }
+@keyframes ampReveal { to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes textReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tagline {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: clamp(0.85rem, 3vw, 1.1rem);
+  letter-spacing: 0.08em;
+  color: var(--text-mid);
+  opacity: 0;
+  animation: textReveal 1.4s var(--ease-out-expo) forwards;
+  animation-delay: 3s;
+  margin-top: 16px;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  animation: textReveal 1s var(--ease-out-expo) forwards;
+  animation-delay: 3.8s;
+}
+
+.scroll-hint span {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+
+.scroll-arrow {
+  width: 20px; height: 20px;
+  border-right: 1.5px solid var(--green-primary);
+  border-bottom: 1.5px solid var(--green-primary);
+  transform: rotate(45deg);
+  animation: scrollBounce 2s ease-in-out infinite;
+  animation-delay: 4.5s;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(5px); }
+}
+
+.frame {
+  position: absolute;
+  inset: 16px;
+  border: 1px solid var(--green-light);
+  border-radius: 2px;
+  opacity: 0;
+  animation: frameReveal 2s var(--ease-out-expo) forwards;
+  animation-delay: 0.3s;
+  pointer-events: none;
+}
+
+.frame::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 0.5px solid oklch(70% 0.08 150 / 0.4);
+  border-radius: 1px;
+}
+
+@keyframes frameReveal {
+  from { opacity: 0; inset: 40px; }
+  to { opacity: 1; inset: 16px; }
+}
+
+/* === EVENTS PAGE === */
+.events-page {
+  background: linear-gradient(160deg, oklch(20% 0.06 155) 0%, oklch(24% 0.08 155) 40%, oklch(22% 0.07 152) 100%);
+  color: var(--cream);
+}
+
+.events-page .frame {
+  border-color: oklch(72% 0.12 85 / 0.25);
+  animation: none;
+  opacity: 1;
+}
+
+.events-page .frame::before {
+  border-color: oklch(72% 0.12 85 / 0.12);
+}
+
+/* Ambient particles */
+.ambient-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: ambientFloat linear infinite;
+}
+
+@keyframes ambientFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) scale(0.5);
+  }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translateY(-80px) translateX(20px) scale(1);
+  }
+}
+
+.corner-ornament {
+  position: absolute;
+  width: 100px; height: 100px;
+  opacity: 0.35;
+  pointer-events: none;
+  animation: cornerGlow 4s ease-in-out infinite alternate;
+}
+
+.corner-ornament.tl { top: 24px; left: 24px; animation-delay: 0s; }
+.corner-ornament.tr { top: 24px; right: 24px; transform: scaleX(-1); animation-delay: 1s; }
+.corner-ornament.bl { bottom: 24px; left: 24px; transform: scaleY(-1); animation-delay: 2s; }
+.corner-ornament.br { bottom: 24px; right: 24px; transform: scale(-1); animation-delay: 3s; }
+
+@keyframes cornerGlow {
+  0% { opacity: 0.25; }
+  100% { opacity: 0.5; }
+}
+
+.events-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 48px 24px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.events-header { margin-bottom: 36px; }
+
+.events-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.events-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 7vw, 3rem);
+  color: var(--cream);
+  line-height: 1.1;
+}
+
+.divider {
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 28px;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.event-item {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 16px 0;
+  position: relative;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: eventReveal 0.8s var(--ease-out-expo) forwards;
+  animation-delay: calc(var(--i) * 150ms + 0.3s);
+}
+
+.event-item + .event-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 80%; height: 1px;
+  background: linear-gradient(90deg, transparent, oklch(72% 0.12 85 / 0.2), transparent);
+}
+
+@keyframes eventReveal { to { opacity: 1; transform: translateY(0); } }
+
+.event-day { text-align: right; padding-right: 14px; }
+
+.event-day-name {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: oklch(75% 0.04 150);
+}
+
+.event-date-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 5.5vw, 2.5rem);
+  line-height: 1;
+  color: var(--gold);
+}
+
+.event-date-num sup {
+  font-size: 0.4em;
+  vertical-align: super;
+  font-weight: 300;
+}
+
+.event-center {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.event-center::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.event-item:not(:last-child) .event-center::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; height: 16px;
+  background: oklch(72% 0.12 85 / 0.3);
+}
+
+.event-name-col { text-align: left; padding-left: 14px; }
+
+.event-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  line-height: 1.2;
+}
+
+.event-dress {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: oklch(75% 0.06 85);
+  margin-top: 3px;
+}
+
+.events-footer {
+  margin-top: 32px;
+  opacity: 0;
+  animation: eventReveal 0.8s var(--ease-out-expo) forwards;
+  animation-delay: 1s;
+}
+
+/* === RSVP PAGE === */
+.rsvp-page {
+  background: linear-gradient(160deg, oklch(96% 0.015 148) 0%, oklch(97% 0.01 90) 30%, oklch(95% 0.018 150) 100%);
+  color: var(--text-dark);
+}
+
+.rsvp-page .frame {
+  border-color: var(--green-light);
+  animation: none;
+  opacity: 1;
+}
+
+.rsvp-page .frame::before {
+  border-color: oklch(70% 0.08 150 / 0.3);
+}
+
+.rsvp-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 48px 28px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.rsvp-header { margin-bottom: 32px; }
+
+.rsvp-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green-primary);
+  margin-bottom: 8px;
+}
+
+.rsvp-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 7vw, 3rem);
+  color: var(--text-dark);
+  line-height: 1.1;
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+
+.form-input {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 12px 16px;
+  border: 1px solid oklch(70% 0.08 150 / 0.4);
+  border-radius: 4px;
+  background: oklch(98% 0.005 150 / 0.6);
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus { border-color: var(--green-primary); }
+
+.form-input::placeholder {
+  color: oklch(60% 0.04 150);
+  font-weight: 200;
+}
+
+.form-input[type="number"] { -moz-appearance: textfield; }
+.form-input[type="number"]::-webkit-inner-spin-button,
+.form-input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px 12px;
+  border: 1px solid oklch(70% 0.08 150 / 0.3);
+  border-radius: 4px;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.checkbox-label:hover {
+  border-color: var(--green-primary);
+  background: oklch(92% 0.02 150 / 0.3);
+}
+
+.checkbox-label input[type="checkbox"] { display: none; }
+
+.checkbox-mark {
+  width: 18px; height: 18px;
+  border: 1.5px solid oklch(55% 0.08 150);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--ease-out-expo);
+  flex-shrink: 0;
+}
+
+.checkbox-mark::after {
+  content: '';
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  background: var(--green-primary);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.checkbox-label input:checked + .checkbox-mark { border-color: var(--green-primary); }
+.checkbox-label input:checked + .checkbox-mark::after { opacity: 1; transform: scale(1); }
+.checkbox-label input:checked ~ .checkbox-text { color: var(--text-dark); }
+
+.checkbox-text {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  transition: color 0.3s ease;
+}
+
+.submit-btn {
+  margin-top: 8px;
+  padding: 14px 32px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--green-primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.submit-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+.submit-btn:active { transform: translateY(0); }
+
+/* Success state */
+.rsvp-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.rsvp-success.show { display: block; }
+.rsvp-header.hidden { display: none; }
+.rsvp-form.hidden { display: none; }
+
+.success-icon {
+  width: 60px; height: 60px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  border: 2px solid var(--green-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: successPop 0.6s var(--ease-out-expo) forwards;
+}
+
+@keyframes successPop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.success-check {
+  width: 24px; height: 24px;
+  stroke: var(--green-primary);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: checkDraw 0.6s 0.3s var(--ease-out-expo) forwards;
+}
+
+@keyframes checkDraw { to { stroke-dashoffset: 0; } }
+
+.success-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .frame { inset: 12px; }
+  .frame::before { inset: 4px; }
+  .corner-ornament { width: 70px; height: 70px; }
+  .events-content { padding: 40px 20px; }
+  .event-item { padding: 12px 0; }
+  .event-center { width: 30px; height: 30px; }
+  .rsvp-content { padding: 40px 20px; }
+  .checkbox-group { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 768px) {
+  .splash-content { padding: 48px 40px; }
+}
+
+@media (min-width: 600px) {
+  .invitation {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 80px oklch(20% 0.05 155 / 0.3);
+  }
+}
+
+/* Page entrance transitions */
+.events-page .events-content,
+.rsvp-page .rsvp-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.events-page.visible .events-content,
+.rsvp-page.visible .rsvp-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+<div class="invitation" id="invitation">
+  <!-- NAV DOTS -->
+  <nav class="nav-dots" id="navDots">
+    <button class="nav-dot active" data-page="0" data-label="Names" aria-label="Page 1"></button>
+    <button class="nav-dot" data-page="1" data-label="Events" aria-label="Page 2"></button>
+    <button class="nav-dot" data-page="2" data-label="RSVP" aria-label="Page 3"></button>
+  </nav>
+
+  <!-- PAGE 1: SPLASH -->
+  <section class="page splash" id="page0">
+    <div class="frame"></div>
+
+    <div class="petal" style="left: 15%; animation-delay: 0.5s; width: 6px; height: 10px;"></div>
+    <div class="petal" style="left: 35%; animation-delay: 2s; width: 9px; height: 14px;"></div>
+    <div class="petal" style="left: 55%; animation-delay: 3.5s; width: 7px; height: 11px;"></div>
+    <div class="petal" style="left: 75%; animation-delay: 1.2s; width: 8px; height: 12px;"></div>
+    <div class="petal" style="left: 90%; animation-delay: 4s; width: 6px; height: 9px;"></div>
+    <div class="petal" style="left: 25%; animation-delay: 5.5s; width: 10px; height: 15px;"></div>
+    <div class="petal" style="left: 65%; animation-delay: 6.2s; width: 7px; height: 11px;"></div>
+    <div class="petal" style="left: 45%; animation-delay: 7s; width: 8px; height: 13px;"></div>
+
+    <svg class="floral floral-top-left" viewbox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.85">
+        <path d="M0 0 Q 80 60, 120 150 Q 140 200, 130 260" stroke="oklch(55% 0.10 152)" stroke-width="1.2" fill="none"/>
+        <path d="M0 40 Q 60 80, 100 140 Q 120 170, 110 220" stroke="oklch(60% 0.08 150)" stroke-width="0.8" fill="none"/>
+        <path d="M40 0 Q 90 50, 140 110 Q 160 140, 150 200" stroke="oklch(50% 0.12 155)" stroke-width="1" fill="none"/>
+        <ellipse cx="80" cy="80" rx="18" ry="8" transform="rotate(-30 80 80)" fill="oklch(60% 0.12 150)" opacity="0.7"/>
+        <ellipse cx="60" cy="120" rx="15" ry="6" transform="rotate(-50 60 120)" fill="oklch(65% 0.10 148)" opacity="0.6"/>
+        <ellipse cx="110" cy="130" rx="20" ry="7" transform="rotate(-20 110 130)" fill="oklch(55% 0.14 155)" opacity="0.65"/>
+        <ellipse cx="90" cy="170" rx="16" ry="6" transform="rotate(-40 90 170)" fill="oklch(62% 0.11 152)" opacity="0.6"/>
+        <ellipse cx="120" cy="190" rx="14" ry="5" transform="rotate(-25 120 190)" fill="oklch(68% 0.09 148)" opacity="0.55"/>
+        <ellipse cx="50" cy="60" rx="12" ry="5" transform="rotate(-60 50 60)" fill="oklch(58% 0.13 155)" opacity="0.7"/>
+        <ellipse cx="130" cy="100" rx="17" ry="6" transform="rotate(-15 130 100)" fill="oklch(63% 0.10 150)" opacity="0.6"/>
+        <circle cx="100" cy="105" r="4" fill="oklch(95% 0.015 90)" opacity="0.8"/>
+        <circle cx="75" cy="145" r="3" fill="oklch(95% 0.015 90)" opacity="0.7"/>
+        <circle cx="55" cy="90" r="3.5" fill="oklch(92% 0.02 85)" opacity="0.6"/>
+        <circle cx="115" cy="155" r="2.5" fill="oklch(75% 0.10 85)" opacity="0.5"/>
+        <circle cx="70" cy="100" r="2" fill="oklch(78% 0.08 85)" opacity="0.4"/>
+      </g>
+    </svg>
+
+    <svg class="floral floral-top-right" viewbox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.85">
+        <path d="M300 0 Q 220 60, 180 150 Q 160 200, 170 260" stroke="oklch(55% 0.10 152)" stroke-width="1.2" fill="none"/>
+        <path d="M300 40 Q 240 80, 200 140 Q 180 170, 190 220" stroke="oklch(60% 0.08 150)" stroke-width="0.8" fill="none"/>
+        <path d="M260 0 Q 210 50, 160 110 Q 140 140, 150 200" stroke="oklch(50% 0.12 155)" stroke-width="1" fill="none"/>
+        <ellipse cx="220" cy="80" rx="18" ry="8" transform="rotate(30 220 80)" fill="oklch(60% 0.12 150)" opacity="0.7"/>
+        <ellipse cx="240" cy="120" rx="15" ry="6" transform="rotate(50 240 120)" fill="oklch(65% 0.10 148)" opacity="0.6"/>
+        <ellipse cx="190" cy="130" rx="20" ry="7" transform="rotate(20 190 130)" fill="oklch(55% 0.14 155)" opacity="0.65"/>
+        <ellipse cx="210" cy="170" rx="16" ry="6" transform="rotate(40 210 170)" fill="oklch(62% 0.11 152)" opacity="0.6"/>
+        <ellipse cx="180" cy="190" rx="14" ry="5" transform="rotate(25 180 190)" fill="oklch(68% 0.09 148)" opacity="0.55"/>
+        <ellipse cx="250" cy="60" rx="12" ry="5" transform="rotate(60 250 60)" fill="oklch(58% 0.13 155)" opacity="0.7"/>
+        <ellipse cx="170" cy="100" rx="17" ry="6" transform="rotate(15 170 100)" fill="oklch(63% 0.10 150)" opacity="0.6"/>
+        <circle cx="200" cy="105" r="4" fill="oklch(95% 0.015 90)" opacity="0.8"/>
+        <circle cx="225" cy="145" r="3" fill="oklch(95% 0.015 90)" opacity="0.7"/>
+        <circle cx="245" cy="90" r="3.5" fill="oklch(92% 0.02 85)" opacity="0.6"/>
+        <circle cx="185" cy="155" r="2.5" fill="oklch(75% 0.10 85)" opacity="0.5"/>
+        <circle cx="230" cy="100" r="2" fill="oklch(78% 0.08 85)" opacity="0.4"/>
+      </g>
+    </svg>
+
+    <svg class="floral floral-bottom-left" viewbox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.8">
+        <path d="M0 280 Q 70 220, 100 140 Q 115 100, 105 50" stroke="oklch(55% 0.10 152)" stroke-width="1.1" fill="none"/>
+        <path d="M0 240 Q 50 200, 80 150 Q 95 120, 90 80" stroke="oklch(60% 0.08 150)" stroke-width="0.8" fill="none"/>
+        <ellipse cx="65" cy="200" rx="16" ry="6" transform="rotate(35 65 200)" fill="oklch(60% 0.12 150)" opacity="0.7"/>
+        <ellipse cx="85" cy="160" rx="18" ry="7" transform="rotate(25 85 160)" fill="oklch(55% 0.14 155)" opacity="0.65"/>
+        <ellipse cx="50" cy="240" rx="14" ry="5" transform="rotate(50 50 240)" fill="oklch(65% 0.10 148)" opacity="0.6"/>
+        <ellipse cx="95" cy="120" rx="15" ry="5.5" transform="rotate(15 95 120)" fill="oklch(62% 0.11 152)" opacity="0.6"/>
+        <ellipse cx="70" cy="135" rx="12" ry="5" transform="rotate(45 70 135)" fill="oklch(68% 0.09 148)" opacity="0.55"/>
+        <circle cx="80" cy="180" r="3.5" fill="oklch(95% 0.015 90)" opacity="0.7"/>
+        <circle cx="60" cy="155" r="2.5" fill="oklch(92% 0.02 85)" opacity="0.6"/>
+        <circle cx="95" cy="140" r="2" fill="oklch(75% 0.10 85)" opacity="0.45"/>
+      </g>
+    </svg>
+
+    <svg class="floral floral-bottom-right" viewbox="0 0 300 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.8">
+        <path d="M300 280 Q 230 220, 200 140 Q 185 100, 195 50" stroke="oklch(55% 0.10 152)" stroke-width="1.1" fill="none"/>
+        <path d="M300 240 Q 250 200, 220 150 Q 205 120, 210 80" stroke="oklch(60% 0.08 150)" stroke-width="0.8" fill="none"/>
+        <path d="M270 280 Q 230 230, 210 170 Q 200 140, 205 100" stroke="oklch(50% 0.12 155)" stroke-width="0.9" fill="none"/>
+        <ellipse cx="235" cy="200" rx="16" ry="6" transform="rotate(-35 235 200)" fill="oklch(60% 0.12 150)" opacity="0.7"/>
+        <ellipse cx="215" cy="160" rx="18" ry="7" transform="rotate(-25 215 160)" fill="oklch(55% 0.14 155)" opacity="0.65"/>
+        <ellipse cx="250" cy="240" rx="14" ry="5" transform="rotate(-50 250 240)" fill="oklch(65% 0.10 148)" opacity="0.6"/>
+        <ellipse cx="205" cy="120" rx="15" ry="5.5" transform="rotate(-15 205 120)" fill="oklch(62% 0.11 152)" opacity="0.6"/>
+        <ellipse cx="240" cy="170" rx="13" ry="5" transform="rotate(-40 240 170)" fill="oklch(68% 0.09 148)" opacity="0.55"/>
+        <ellipse cx="225" cy="130" rx="12" ry="5" transform="rotate(-20 225 130)" fill="oklch(63% 0.10 150)" opacity="0.6"/>
+        <circle cx="220" cy="180" r="3.5" fill="oklch(95% 0.015 90)" opacity="0.7"/>
+        <circle cx="240" cy="155" r="2.5" fill="oklch(92% 0.02 85)" opacity="0.6"/>
+        <circle cx="210" cy="140" r="2" fill="oklch(75% 0.10 85)" opacity="0.45"/>
+      </g>
+    </svg>
+
+    <div class="splash-content">
+      <svg class="ornament-top" width="120" height="20" viewbox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 Q 45 2, 30 10 Q 15 18, 0 10" stroke="oklch(55% 0.10 152)" stroke-width="0.8" fill="none"/>
+        <path d="M60 10 Q 75 2, 90 10 Q 105 18, 120 10" stroke="oklch(55% 0.10 152)" stroke-width="0.8" fill="none"/>
+        <circle cx="60" cy="10" r="2.5" fill="oklch(72% 0.12 85)"/>
+        <circle cx="30" cy="10" r="1.5" fill="oklch(65% 0.10 150)"/>
+        <circle cx="90" cy="10" r="1.5" fill="oklch(65% 0.10 150)"/>
+      </svg>
+
+      <p class="prelude">Together with their families</p>
+      <h1 class="name name-1">Sami Ahmed</h1>
+      <p class="ampersand">&</p>
+      <h1 class="name name-2">Aiman Zahra</h1>
+      <p class="tagline">request the pleasure of your company</p>
+
+      <svg class="ornament-bottom" width="120" height="20" viewbox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 Q 45 18, 30 10 Q 15 2, 0 10" stroke="oklch(55% 0.10 152)" stroke-width="0.8" fill="none"/>
+        <path d="M60 10 Q 75 18, 90 10 Q 105 2, 120 10" stroke="oklch(55% 0.10 152)" stroke-width="0.8" fill="none"/>
+        <circle cx="60" cy="10" r="2.5" fill="oklch(72% 0.12 85)"/>
+        <circle cx="30" cy="10" r="1.5" fill="oklch(65% 0.10 150)"/>
+        <circle cx="90" cy="10" r="1.5" fill="oklch(65% 0.10 150)"/>
+      </svg>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- PAGE 2: WEDDING FUNCTIONS -->
+  <section class="page events-page" id="page1">
+    <div class="frame"></div>
+
+    <!-- Ambient particles -->
+    <div class="ambient-particle" style="width: 3px; height: 3px; background: oklch(72% 0.12 85 / 0.4); left: 12%; top: 70%; animation-duration: 10s; animation-delay: 0s;"></div>
+    <div class="ambient-particle" style="width: 2px; height: 2px; background: oklch(72% 0.12 85 / 0.3); left: 85%; top: 65%; animation-duration: 12s; animation-delay: 2s;"></div>
+    <div class="ambient-particle" style="width: 4px; height: 4px; background: oklch(72% 0.12 85 / 0.25); left: 8%; top: 30%; animation-duration: 14s; animation-delay: 4s;"></div>
+    <div class="ambient-particle" style="width: 2px; height: 2px; background: oklch(72% 0.12 85 / 0.35); left: 92%; top: 40%; animation-duration: 11s; animation-delay: 1s;"></div>
+    <div class="ambient-particle" style="width: 3px; height: 3px; background: oklch(72% 0.12 85 / 0.3); left: 18%; top: 85%; animation-duration: 13s; animation-delay: 3s;"></div>
+    <div class="ambient-particle" style="width: 2px; height: 2px; background: oklch(72% 0.12 85 / 0.25); left: 78%; top: 20%; animation-duration: 15s; animation-delay: 5s;"></div>
+
+    <svg class="corner-ornament tl" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0 Q 30 5, 50 20 Q 70 35, 80 60" stroke="oklch(72% 0.12 85)" stroke-width="0.6" fill="none"/>
+      <path d="M0 0 Q 5 30, 20 50 Q 35 70, 60 80" stroke="oklch(72% 0.12 85)" stroke-width="0.6" fill="none"/>
+      <path d="M0 0 Q 20 15, 35 35 Q 48 52, 55 70" stroke="oklch(72% 0.12 85)" stroke-width="0.4" fill="none"/>
+      <ellipse cx="30" cy="25" rx="8" ry="3" transform="rotate(-35 30 25)" fill="oklch(72% 0.12 85)" opacity="0.4"/>
+      <ellipse cx="25" cy="35" rx="7" ry="2.5" transform="rotate(-55 25 35)" fill="oklch(72% 0.12 85)" opacity="0.3"/>
+      <ellipse cx="40" cy="40" rx="6" ry="2.5" transform="rotate(-20 40 40)" fill="oklch(72% 0.12 85)" opacity="0.35"/>
+      <circle cx="45" cy="22" r="2" fill="oklch(72% 0.12 85)" opacity="0.5"/>
+      <circle cx="22" cy="45" r="1.5" fill="oklch(72% 0.12 85)" opacity="0.4"/>
+    </svg>
+    <svg class="corner-ornament tr" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0 Q 30 5, 50 20 Q 70 35, 80 60" stroke="oklch(72% 0.12 85)" stroke-width="0.6" fill="none"/>
+      <path d="M0 0 Q 5 30, 20 50 Q 35 70, 60 80" stroke="oklch(72% 0.12 85)" stroke-width="0.6" fill="none"/>
+      <path d="M0 0 Q 20 15, 35 35 Q 48 52, 55 70" stroke="oklch(72% 0.12 85)" stroke-width="0.4" fill="none"/>
+      <ellipse cx="30" cy="25" rx="8" ry="3" transform="rotate(-35 30 25)" fill="oklch(72% 0.12 85)" opacity="0.4"/>
+      <ellipse cx="25" cy="35" rx="7" ry="2.5" transform="rotate(-55 25 35)" fill="oklch(72% 0.12 85)" opacity="0.3"/>
+      <ellipse cx="40" cy="40" rx="6" ry="2.5" transform="rotate(-20 40 40)" fill="oklch(72% 0.12 85)" opacity="0.35"/>
+      <circle cx="45" cy="22" r="2" fill="oklch(72% 0.12 85)" opacity="0.5"/>
+      <circle cx="22" cy="45" r="1.5" fill="oklch(72% 0.12 85)" opacity="0.4"/>
+    </svg>
+    <svg class="corner-ornament bl" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0 Q 30 5, 50 20 Q 70 35, 80 60" stroke="oklch(72% 0.12 85)" stroke-width="0.6" fill="none"/>
+      <path d="M0 0 Q 5 30, 20 50 Q 35 70, 60 80" stroke="oklch(72% 0.12 85)" stroke-width="0.6" fill="none"/>
+      <path d="M0 0 Q 20 15, 35 35 Q 48 52, 55 70" stroke="oklch(72% 0.12 85)" stroke-width="0.4" fill="none"/>
+      <ellipse cx="30" cy="25" rx="8" ry="3" transform="rotate(-35 30 25)" fill="oklch(72% 0.12 85)" opacity="0.4"/>
+      <ellipse cx="25" cy="35" rx="7" ry="2.5" transform="rotate(-55 25 35)" fill="oklch(72% 0.12 85)" opacity="0.3"/>
+      <circle cx="45" cy="22" r="2" fill="oklch(72% 0.12 85)" opacity="0.5"/>
+    </svg>
+    <svg class="corner-ornament br" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0 Q 30 5, 50 20 Q 70 35, 80 60" stroke="oklch(72% 0.12 85)" stroke-width="0.6" fill="none"/>
+      <path d="M0 0 Q 5 30, 20 50 Q 35 70, 60 80" stroke="oklch(72% 0.12 85)" stroke-width="0.6" fill="none"/>
+      <path d="M0 0 Q 20 15, 35 35 Q 48 52, 55 70" stroke="oklch(72% 0.12 85)" stroke-width="0.4" fill="none"/>
+      <ellipse cx="30" cy="25" rx="8" ry="3" transform="rotate(-35 30 25)" fill="oklch(72% 0.12 85)" opacity="0.4"/>
+      <ellipse cx="25" cy="35" rx="7" ry="2.5" transform="rotate(-55 25 35)" fill="oklch(72% 0.12 85)" opacity="0.3"/>
+      <circle cx="45" cy="22" r="2" fill="oklch(72% 0.12 85)" opacity="0.5"/>
+    </svg>
+
+    <div class="events-content">
+      <div class="events-header">
+        <p class="events-eyebrow">Wedding Functions</p>
+        <h2 class="events-title">March 2027</h2>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="events-list">
+        <div class="event-item" style="--i: 0">
+          <div class="event-day">
+            <p class="event-day-name">Sunday</p>
+            <p class="event-date-num">21<sup>st</sup></p>
+          </div>
+          <div class="event-center"></div>
+          <div class="event-name-col">
+            <p class="event-name">Nikah</p>
+            <p class="event-dress">Wear: White or gold</p>
+          </div>
+        </div>
+
+        <div class="event-item" style="--i: 1">
+          <div class="event-day">
+            <p class="event-day-name">Friday</p>
+            <p class="event-date-num">26<sup>th</sup></p>
+          </div>
+          <div class="event-center"></div>
+          <div class="event-name-col">
+            <p class="event-name">Mendhi</p>
+            <p class="event-dress">Wear: Any colour, no red</p>
+          </div>
+        </div>
+
+        <div class="event-item" style="--i: 2">
+          <div class="event-day">
+            <p class="event-day-name">Saturday</p>
+            <p class="event-date-num">27<sup>th</sup></p>
+          </div>
+          <div class="event-center"></div>
+          <div class="event-name-col">
+            <p class="event-name">Baraat</p>
+            <p class="event-dress">Wear: Any colour</p>
+          </div>
+        </div>
+
+        <div class="event-item" style="--i: 3">
+          <div class="event-day">
+            <p class="event-day-name">Sunday</p>
+            <p class="event-date-num">28<sup>th</sup></p>
+          </div>
+          <div class="event-center"></div>
+          <div class="event-name-col">
+            <p class="event-name">Walima</p>
+            <p class="event-dress">Wear: Suits for men, any colour for women</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="events-footer">
+        <svg width="120" height="20" viewbox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 10 Q 45 18, 30 10 Q 15 2, 0 10" stroke="oklch(72% 0.12 85 / 0.5)" stroke-width="0.6" fill="none"/>
+          <path d="M60 10 Q 75 18, 90 10 Q 105 2, 120 10" stroke="oklch(72% 0.12 85 / 0.5)" stroke-width="0.6" fill="none"/>
+          <circle cx="60" cy="10" r="2" fill="oklch(72% 0.12 85)" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: RSVP -->
+  <section class="page rsvp-page" id="page2">
+    <div class="frame"></div>
+
+    <div class="rsvp-content">
+      <div class="rsvp-header" id="rsvpHeader">
+        <p class="rsvp-eyebrow">Kindly Respond</p>
+        <h2 class="rsvp-title">RSVP</h2>
+      </div>
+
+      <form class="rsvp-form" id="rsvpForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="639c56cb-1e40-4ed0-acf9-b691f39da67b">
+        <input type="hidden" name="subject" value="New RSVP — Sami &amp; Aiman Wedding">
+        <input type="hidden" name="from_name" value="Wedding RSVP">
+
+        <div class="form-group">
+          <label class="form-label" for="guestName">Your Name</label>
+          <input class="form-input" type="text" id="guestName" name="name" placeholder="Full name" required="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="numGuests">Number of Persons Attending</label>
+          <input class="form-input" type="number" id="numGuests" name="guests" placeholder="Including yourself" min="1" max="20" required="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Events Attending</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="events" value="Nikah">
+              <span class="checkbox-mark"></span>
+              <span class="checkbox-text">Nikah</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="events" value="Mendhi">
+              <span class="checkbox-mark"></span>
+              <span class="checkbox-text">Mendhi</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="events" value="Baraat">
+              <span class="checkbox-mark"></span>
+              <span class="checkbox-text">Baraat</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="events" value="Walima">
+              <span class="checkbox-mark"></span>
+              <span class="checkbox-text">Walima</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Send RSVP</button>
+      </form>
+
+      <div class="rsvp-success" id="rsvpSuccess">
+        <div class="success-icon">
+          <svg class="success-check" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="4 12 10 18 20 6"/>
+          </svg>
+        </div>
+        <p class="success-text">Thank you very much,<br>we hope to see you soon!</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+// Nav dot tracking
+const invitation = document.getElementById('invitation');
+const pages = document.querySelectorAll('.page');
+const dots = document.querySelectorAll('.nav-dot');
+
+dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    const pageIndex = parseInt(dot.dataset.page);
+    pages[pageIndex].scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+const pageObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const pageIndex = Array.from(pages).indexOf(entry.target);
+      dots.forEach((d, i) => d.classList.toggle('active', i === pageIndex));
+    }
+  });
+}, { root: invitation, threshold: 0.6 });
+
+pages.forEach(page => pageObserver.observe(page));
+
+// Entrance animations
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { root: invitation, threshold: 0.3 });
+
+document.querySelectorAll('.events-page, .rsvp-page').forEach(el => revealObserver.observe(el));
+
+// Parallax
+const florals = document.querySelectorAll('.floral');
+invitation.addEventListener('scroll', () => {
+  const scrollY = invitation.scrollTop;
+  florals.forEach((floral, i) => {
+    const speed = 0.3 + (i * 0.05);
+    floral.style.transform = `translateY(${scrollY * speed * -0.2}px)`;
+  });
+});
+
+// RSVP Form submission
+const form = document.getElementById('rsvpForm');
+const rsvpHeader = document.getElementById('rsvpHeader');
+const successEl = document.getElementById('rsvpSuccess');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData(form);
+  const events = formData.getAll('events');
+  formData.delete('events');
+  formData.append('events_attending', events.join(', '));
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (response.ok) {
+      form.classList.add('hidden');
+      rsvpHeader.classList.add('hidden');
+      successEl.classList.add('show');
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  } catch (err) {
+    alert('Something went wrong. Please try again.');
+  }
+});
+</script>
+</body>
+</html>
