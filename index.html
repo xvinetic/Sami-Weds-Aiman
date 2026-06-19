@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script type='text/javascript' nonce='mYz1DBu/H40kVdR4Ju/kag==' src='https://t2631772.p.clickup-attachments.com/paxL0jPIuRPxB0RlPOwRf-EO1xj3KitEbTEuoFKUNmATRdnzgYGt-m5dn-8bTmc9LqgS26fi05aoFhx_NoWA0spFGFkpwzcELXcbpDScwXrFPgo67S5yX8OGsoAmw28PeoBA7IgSUBdnMB3ME6hexdZVNg9akEJjzYQgL1lpxPLfAJFQtIuXYSH7i-xT0kIY_dMzAjtZC9VnmuhyC1sJMfG0mmL8SF0HgkekgPZcZl6rN-rioPs_Kcnzj8QEPO0wFH4z6fpdKCHfDs0QZCFOd-x7mF5BSHe-mZpustO1Tkb9ZCyLFzXqHOWV25qbsHv6dFuJ110kQ7nAQtpalFu0mR-wAw-iZWLgwcj7lPo7YBdnSo0CtFSxbZrjMhBD0EtfovqMA0_WLzlGHrsZBuJXPwexGPco8JFr4QnqNlGBStQnrYLaYC0zcWm5dvBjUFfl8tijVHfZEyc0p1Zn198Qym9RNaXjBIzpr1tP7hBQado4mHzZ7gSifEYOTK1G3Dn8fxWJHMKzNmuzKAfpZxHOXLa5HcRxXut9_JToyVClUCw50u9SyS8n7orz5ybN5Ugi3uPncl7FCQ'></script>
+<head><script type='text/javascript' nonce='oneVx+mreDaDC8q9R7ifvw==' src='https://t2631772.p.clickup-attachments.com/9REi49sfS1dgkeIjZ6RPqGYZv6AL9hI4SniHUVQ45CrPmyVGFq9SlFOE5_zcWarOIlvtTOf4jN5aB9_2cLYPQw3J7qUplifoH44I7Njp1lEWRPsPy7YK4tuPfCtjEUS_6PmQjZ6SsB3lh7N6zSkDa87OTHqBD_TFLX_TfbKecxdytzfBrUnFpvyHox7AqAannmTzE0jCRqPfBEFIK3u-RchyvI8twQeUTLYnCRhT3LvAddOilyDf01d9R9Pui-jKm_hp0FdmOKwxQDRUXpY4zxrFxV12XosxcMmwMyzt8aVLgcf0mUb37lCTnGWXQYpMcryoEpMnMUDUsCrFYvTVMA4eaiH4TpVRDsD0kG3X0bnErCrNZbvZRrUcQUpEgrtjiQVWlXyTD_AEcD4bqSfyzAuM3QIhBgCU-TrLfKBlzchRuA1hyMCLLlxA7sHUbt_oibcIum9f8BhFVY5pnZ_CYmUpZTqqWpf4Tur7rSB4lYtklDidJSgFWblLI5Ltke2vTU0RW6qkLtmxKky8RRGIEsO2xPN9MYmbmdeUgiKTfo7iWf3fHfC9lZCUigTMd7AHBOFeXptkkA'></script>
 <!-- skill:chrome -->
 <style>
 /* Credit line — bottom-right */
@@ -47,7 +47,7 @@
         var credit = document.createElement('div');
         credit.className = 'design-ui-credit';
         credit.setAttribute('aria-hidden', 'true');
-        credit.innerHTML = '\u{1F49C} by ClickUp';
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
         document.body.appendChild(credit);
 
         var timer = null;
@@ -76,7 +76,11 @@
 <meta property="og:title" content="Sami Weds Aiman">
 <meta property="og:description" content="You&#39;re invited! March 2027">
 <meta property="og:image" content="https://xvinetic.github.io/Sami-Weds-Aiman/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<meta property="og:url" content="https://xvinetic.github.io/Sami-Weds-Aiman/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Sami Weds Aiman">
 <meta name="theme-color" content="#2d5a3f">
 <title>Sami Weds Aiman — Wedding Invitation</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Jost:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
@@ -331,7 +335,8 @@ html, body {
   margin-top: 16px;
 }
 
-.scroll-hint {
+/* Scroll button */
+.scroll-btn {
   position: absolute;
   bottom: 32px;
   left: 0;
@@ -344,9 +349,14 @@ html, body {
   opacity: 0;
   animation: textReveal 1s var(--ease-out-expo) forwards;
   animation-delay: 3.8s;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 12px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.scroll-hint span {
+.scroll-btn span {
   font-family: 'Jost', sans-serif;
   font-weight: 300;
   font-size: 0.7rem;
@@ -355,7 +365,7 @@ html, body {
   color: var(--text-mid);
 }
 
-.scroll-arrow {
+.scroll-btn .scroll-arrow {
   width: 20px; height: 20px;
   border-right: 1.5px solid var(--green-primary);
   border-bottom: 1.5px solid var(--green-primary);
@@ -419,16 +429,10 @@ html, body {
 }
 
 @keyframes ambientFloat {
-  0% {
-    opacity: 0;
-    transform: translateY(0) translateX(0) scale(0.5);
-  }
+  0% { opacity: 0; transform: translateY(0) translateX(0) scale(0.5); }
   15% { opacity: 1; }
   85% { opacity: 1; }
-  100% {
-    opacity: 0;
-    transform: translateY(-80px) translateX(20px) scale(1);
-  }
+  100% { opacity: 0; transform: translateY(-80px) translateX(20px) scale(1); }
 }
 
 .corner-ornament {
@@ -592,7 +596,7 @@ html, body {
   animation-delay: 1s;
 }
 
-/* === RSVP CONTENT (on dark background) === */
+/* === RSVP CONTENT === */
 .rsvp-content {
   position: relative;
   z-index: 10;
@@ -951,17 +955,16 @@ html, body {
       </svg>
     </div>
 
-    <div class="scroll-hint">
+    <button class="scroll-btn" id="scrollBtn" aria-label="Scroll to events">
       <span>Scroll</span>
       <div class="scroll-arrow"></div>
-    </div>
+    </button>
   </section>
 
   <!-- PAGE 2: WEDDING FUNCTIONS -->
   <section class="page dark-page" id="page1">
     <div class="frame"></div>
 
-    <!-- Ambient particles -->
     <div class="ambient-particle" style="width: 3px; height: 3px; background: rgba(201, 168, 76, 0.4); left: 12%; top: 70%; animation-duration: 10s; animation-delay: 0s;"></div>
     <div class="ambient-particle" style="width: 2px; height: 2px; background: rgba(201, 168, 76, 0.3); left: 85%; top: 65%; animation-duration: 12s; animation-delay: 2s;"></div>
     <div class="ambient-particle" style="width: 4px; height: 4px; background: rgba(201, 168, 76, 0.25); left: 8%; top: 30%; animation-duration: 14s; animation-delay: 4s;"></div>
@@ -1023,7 +1026,6 @@ html, body {
           <div class="event-center"></div>
           <div class="event-name-col">
             <p class="event-name">Nikah</p>
-            <p class="event-dress">Wear: White or gold</p>
           </div>
         </div>
 
@@ -1047,7 +1049,6 @@ html, body {
           <div class="event-center"></div>
           <div class="event-name-col">
             <p class="event-name">Baraat</p>
-            <p class="event-dress">Wear: Any colour</p>
           </div>
         </div>
 
@@ -1145,6 +1146,12 @@ const invitation = document.getElementById('invitation');
 const pages = document.querySelectorAll('.page');
 const dots = document.querySelectorAll('.nav-dot');
 
+// Scroll button on first page
+document.getElementById('scrollBtn').addEventListener('click', () => {
+  pages[1].scrollIntoView({ behavior: 'smooth' });
+});
+
+// Nav dots
 dots.forEach(dot => {
   dot.addEventListener('click', () => {
     const pageIndex = parseInt(dot.dataset.page);
@@ -1182,6 +1189,7 @@ invitation.addEventListener('scroll', () => {
   });
 });
 
+// RSVP
 const form = document.getElementById('rsvpForm');
 const rsvpHeader = document.getElementById('rsvpHeader');
 const successEl = document.getElementById('rsvpSuccess');
