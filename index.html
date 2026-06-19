@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script type='text/javascript' nonce='mu46dkL9a17e4jIrk/CJgg==' src='https://t2631772.p.clickup-attachments.com/OSFRseTQSgxfnAidh3MDG1rxmINJm7yvrpXsyFfLrZYlu2ydf7wZ2h6isj0lGqDLOMc3xkTVALqmKUsNJ6Q7mW0WpJ235KCOyN5eHyinpboVqry9vTHvOhxt9xy7-FcWSy7iW9a3KAYrkiC1mv-xQ9K4TZ58OW-lRJT9qV-Hk3_CUSBjlDgMgT-PyuNX2Ynng4LBAESvcitSuge6UWHwevY2TNmuzUBemmc2BYhy08twQHjFSVz8itiOBZ3EhC91iPupHc7YBRuy4KtcyfrYkkyoaA8nZRo3b8OalaIJnIsWvba6Kkv691BwaFEKeRkwSJE2Sh7RTI4PJAdS0RBUO5s8anbSKK-lUoeNQBFcBljq04fyoijQsCb5tPsz46SqLnHRNMOjShtJVYXf4T-phX_3IuFECXiw7mcqU04sGu8s75dmHFe2QvSanbW045Sn93ZBqvI1lYY3zml4hOvy81iX0AmEe5i61TGt9P5_EbVrRvvMQya8C-9EbSpNxiLGfeSEZVPzCI2AvyiMbre3m_ftAMr_fnZHVtvvBOlb_o9EYwqaQVuiMEvbxZ_sY1kj5UTKfRscvw'></script>
+<head><script type='text/javascript' nonce='mYz1DBu/H40kVdR4Ju/kag==' src='https://t2631772.p.clickup-attachments.com/paxL0jPIuRPxB0RlPOwRf-EO1xj3KitEbTEuoFKUNmATRdnzgYGt-m5dn-8bTmc9LqgS26fi05aoFhx_NoWA0spFGFkpwzcELXcbpDScwXrFPgo67S5yX8OGsoAmw28PeoBA7IgSUBdnMB3ME6hexdZVNg9akEJjzYQgL1lpxPLfAJFQtIuXYSH7i-xT0kIY_dMzAjtZC9VnmuhyC1sJMfG0mmL8SF0HgkekgPZcZl6rN-rioPs_Kcnzj8QEPO0wFH4z6fpdKCHfDs0QZCFOd-x7mF5BSHe-mZpustO1Tkb9ZCyLFzXqHOWV25qbsHv6dFuJ110kQ7nAQtpalFu0mR-wAw-iZWLgwcj7lPo7YBdnSo0CtFSxbZrjMhBD0EtfovqMA0_WLzlGHrsZBuJXPwexGPco8JFr4QnqNlGBStQnrYLaYC0zcWm5dvBjUFfl8tijVHfZEyc0p1Zn198Qym9RNaXjBIzpr1tP7hBQado4mHzZ7gSifEYOTK1G3Dn8fxWJHMKzNmuzKAfpZxHOXLa5HcRxXut9_JToyVClUCw50u9SyS8n7orz5ybN5Ugi3uPncl7FCQ'></script>
 <!-- skill:chrome -->
 <style>
 /* Credit line — bottom-right */
@@ -47,7 +47,7 @@
         var credit = document.createElement('div');
         credit.className = 'design-ui-credit';
         credit.setAttribute('aria-hidden', 'true');
-        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        credit.innerHTML = '\u{1F49C} by ClickUp';
         document.body.appendChild(credit);
 
         var timer = null;
@@ -393,19 +393,19 @@ html, body {
   to { opacity: 1; inset: 16px; }
 }
 
-/* === EVENTS PAGE === */
-.events-page {
+/* === DARK PAGE (shared by events + rsvp) === */
+.dark-page {
   background: linear-gradient(160deg, #162e20 0%, #1e3f2c 40%, #1a3628 100%);
   color: var(--cream);
 }
 
-.events-page .frame {
+.dark-page .frame {
   border-color: rgba(201, 168, 76, 0.25);
   animation: none;
   opacity: 1;
 }
 
-.events-page .frame::before {
+.dark-page .frame::before {
   border-color: rgba(201, 168, 76, 0.12);
 }
 
@@ -449,6 +449,7 @@ html, body {
   100% { opacity: 0.5; }
 }
 
+/* === EVENTS CONTENT === */
 .events-content {
   position: relative;
   z-index: 10;
@@ -591,22 +592,7 @@ html, body {
   animation-delay: 1s;
 }
 
-/* === RSVP PAGE === */
-.rsvp-page {
-  background: linear-gradient(160deg, #eef2ea 0%, #f5f0e6 30%, #e6ede8 100%);
-  color: var(--text-dark);
-}
-
-.rsvp-page .frame {
-  border-color: var(--green-light);
-  animation: none;
-  opacity: 1;
-}
-
-.rsvp-page .frame::before {
-  border-color: rgba(125, 191, 150, 0.3);
-}
-
+/* === RSVP CONTENT (on dark background) === */
 .rsvp-content {
   position: relative;
   z-index: 10;
@@ -624,7 +610,7 @@ html, body {
   font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--green-primary);
+  color: var(--gold);
   margin-bottom: 8px;
 }
 
@@ -632,7 +618,7 @@ html, body {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: clamp(2rem, 7vw, 3rem);
-  color: var(--text-dark);
+  color: var(--cream);
   line-height: 1.1;
 }
 
@@ -655,7 +641,7 @@ html, body {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-mid);
+  color: #a8b8ac;
 }
 
 .form-input {
@@ -663,18 +649,18 @@ html, body {
   font-weight: 300;
   font-size: 1rem;
   padding: 12px 16px;
-  border: 1px solid rgba(125, 191, 150, 0.4);
+  border: 1px solid rgba(201, 168, 76, 0.3);
   border-radius: 4px;
-  background: rgba(250, 248, 243, 0.6);
-  color: var(--text-dark);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--cream);
   outline: none;
   transition: border-color 0.3s ease;
 }
 
-.form-input:focus { border-color: var(--green-primary); }
+.form-input:focus { border-color: var(--gold); }
 
 .form-input::placeholder {
-  color: #6a8a72;
+  color: rgba(168, 184, 172, 0.6);
   font-weight: 200;
 }
 
@@ -697,21 +683,21 @@ html, body {
   gap: 10px;
   cursor: pointer;
   padding: 10px 12px;
-  border: 1px solid rgba(125, 191, 150, 0.3);
+  border: 1px solid rgba(201, 168, 76, 0.2);
   border-radius: 4px;
   transition: all 0.3s var(--ease-out-expo);
 }
 
 .checkbox-label:hover {
-  border-color: var(--green-primary);
-  background: rgba(200, 224, 204, 0.3);
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.08);
 }
 
 .checkbox-label input[type="checkbox"] { display: none; }
 
 .checkbox-mark {
   width: 18px; height: 18px;
-  border: 1.5px solid #5a8a65;
+  border: 1.5px solid rgba(201, 168, 76, 0.5);
   border-radius: 3px;
   display: flex;
   align-items: center;
@@ -724,21 +710,21 @@ html, body {
   content: '';
   width: 10px; height: 10px;
   border-radius: 2px;
-  background: var(--green-primary);
+  background: var(--gold);
   opacity: 0;
   transform: scale(0);
   transition: all 0.3s var(--ease-out-expo);
 }
 
-.checkbox-label input:checked + .checkbox-mark { border-color: var(--green-primary); }
+.checkbox-label input:checked + .checkbox-mark { border-color: var(--gold); }
 .checkbox-label input:checked + .checkbox-mark::after { opacity: 1; transform: scale(1); }
-.checkbox-label input:checked ~ .checkbox-text { color: var(--text-dark); }
+.checkbox-label input:checked ~ .checkbox-text { color: var(--cream); }
 
 .checkbox-text {
   font-family: 'Jost', sans-serif;
   font-weight: 300;
   font-size: 0.9rem;
-  color: var(--text-mid);
+  color: #a8b8ac;
   transition: color 0.3s ease;
 }
 
@@ -750,15 +736,15 @@ html, body {
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--cream);
-  background: var(--green-primary);
+  color: var(--green-deep);
+  background: var(--gold);
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.4s var(--ease-out-expo);
 }
 
-.submit-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+.submit-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
 .submit-btn:active { transform: translateY(0); }
 
 /* Success state */
@@ -776,7 +762,7 @@ html, body {
   width: 60px; height: 60px;
   margin: 0 auto 24px;
   border-radius: 50%;
-  border: 2px solid var(--green-primary);
+  border: 2px solid var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -790,7 +776,7 @@ html, body {
 
 .success-check {
   width: 24px; height: 24px;
-  stroke: var(--green-primary);
+  stroke: var(--gold);
   stroke-width: 2.5;
   fill: none;
   stroke-dasharray: 40;
@@ -804,7 +790,7 @@ html, body {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: clamp(1.3rem, 5vw, 1.8rem);
-  color: var(--text-dark);
+  color: var(--cream);
   line-height: 1.4;
 }
 
@@ -833,15 +819,15 @@ html, body {
 }
 
 /* Page entrance transitions */
-.events-page .events-content,
-.rsvp-page .rsvp-content {
+.dark-page .events-content,
+.dark-page .rsvp-content {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
 }
 
-.events-page.visible .events-content,
-.rsvp-page.visible .rsvp-content {
+.dark-page.visible .events-content,
+.dark-page.visible .rsvp-content {
   opacity: 1;
   transform: translateY(0);
 }
@@ -972,7 +958,7 @@ html, body {
   </section>
 
   <!-- PAGE 2: WEDDING FUNCTIONS -->
-  <section class="page events-page" id="page1">
+  <section class="page dark-page" id="page1">
     <div class="frame"></div>
 
     <!-- Ambient particles -->
@@ -1089,7 +1075,7 @@ html, body {
   </section>
 
   <!-- PAGE 3: RSVP -->
-  <section class="page rsvp-page" id="page2">
+  <section class="page dark-page" id="page2">
     <div class="frame"></div>
 
     <div class="rsvp-content">
@@ -1155,7 +1141,6 @@ html, body {
 </div>
 
 <script>
-// Nav dot tracking
 const invitation = document.getElementById('invitation');
 const pages = document.querySelectorAll('.page');
 const dots = document.querySelectorAll('.nav-dot');
@@ -1178,7 +1163,6 @@ const pageObserver = new IntersectionObserver((entries) => {
 
 pages.forEach(page => pageObserver.observe(page));
 
-// Entrance animations
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1187,9 +1171,8 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { root: invitation, threshold: 0.3 });
 
-document.querySelectorAll('.events-page, .rsvp-page').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.dark-page').forEach(el => revealObserver.observe(el));
 
-// Parallax
 const florals = document.querySelectorAll('.floral');
 invitation.addEventListener('scroll', () => {
   const scrollY = invitation.scrollTop;
@@ -1199,7 +1182,6 @@ invitation.addEventListener('scroll', () => {
   });
 });
 
-// RSVP Form submission
 const form = document.getElementById('rsvpForm');
 const rsvpHeader = document.getElementById('rsvpHeader');
 const successEl = document.getElementById('rsvpSuccess');
